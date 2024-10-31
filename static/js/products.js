@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
   const templateProduct = `
-    <div id="producto" class="relative w-full h-full overflow-hidden bg-gradient-to-r from-gray-50 via-gray-700 to-gray-50 p-4 sm:p-6 lg:p-8">
+    <div id="producto" class="relative w-full h-full overflow-hidden bg-gradient-to-r from-gray-50 via-gray-400 to-gray-50 p-4 sm:p-6 lg:p-8">
 
       <!-- Título de la galería de productos -->
       <div class="text-center mb-4 sm:mb-6">
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white">Nuestros Productos</h2>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-800">Nuestros Productos</h2>
       </div>
 
       <!-- Contenedor de imágenes -->
