@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <header class="bg-gray-100 shadow-md fixed w-full top-0 z-10">
             <div class="lg:max-w-7xl w-full mx-auto px-8 lg:px-8">
                 <div class="flex justify-between items-center py-2">
-                    <div class="text-xs font-bold text-gray-700 items-center space-x-2">
+                    <div class="text-xs font-bold text-gray-700 items-center space-x-2 hidden lg:block">
                         <img class="w-auto h-auto opacity-100 shadow-none lg:max-h-12 max-h-9 w-full object-contain" src="static/img/logo/Logo-AI1.png" alt="Reform" width="158" height="48">
                         <span class="text-center text-cyan-800 font-semibold">Avícola Isabelita</span>
                     </div>
