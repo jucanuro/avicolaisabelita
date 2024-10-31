@@ -1,26 +1,65 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const templateProduct = `
-      <div class="relative w-full h-full overflow-hidden bg-gray-800  shadow-xl p-6">
+  const templateProduct = `
+    <div id="producto" class="relative w-full h-full overflow-hidden bg-gradient-to-r from-gray-50 via-gray-700 to-gray-50 p-6">
 
-        <!-- Título de la galería de productos -->
-        <div class="text-center mb-6">
-          <h2 class="text-lg lg:text-2xl font-bold text-white">Nuestros Productos</h2>
-        </div>
+      <!-- Título de la galería de productos -->
+      <div class="text-center mb-6">
+        <h2 class="text-lg lg:text-2xl font-bold text-white">Nuestros Productos</h2>
+      </div>
 
-        <!-- Contenedor de imágenes -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <img src="/avicolaisabelita/static/img/products/img-1.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-2.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-3.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-4.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-5.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-6.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-7.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
-          <img src="/avicolaisabelita/static/img/products/img-8.jpeg" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
+      <!-- Contenedor de imágenes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <img src="/avicolaisabelita/static/img/products/img-1.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-2.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-3.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-4.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-5.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-6.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-7.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+        <img src="/avicolaisabelita/static/img/products/img-8.jpeg" class="product-img w-full h-48 object-cover rounded-lg shadow-lg transition duration-200 transform hover:scale-105 cursor-pointer">
+      </div>
+
+      <!-- Modal para mostrar imagen en tamaño completo -->
+      <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="relative w-1/2"> <!-- Cambia el ancho a 50% -->
+          <img id="modalImage" src="" class="w-full h-auto rounded-lg shadow-lg transition duration-300 transform scale-90 mx-auto"> <!-- Centra la imagen -->
+          <button id="closeModal" class="absolute top-2 right-2 bg-white text-gray-800 rounded-full p-2 focus:outline-none hover:bg-gray-300 transition duration-200">
+            &times; <!-- Símbolo de cerrar -->
+          </button>
         </div>
       </div>
-    `;
-    
-    // Insertar el template en el DOM
-    document.getElementById("product-content").innerHTML = templateProduct;
+    </div>
+  `;
+
+  // Insertar el template en el DOM
+  document.getElementById("product-content").innerHTML = templateProduct;
+
+  // Seleccionar todas las imágenes de productos
+  const productImages = document.querySelectorAll('.product-img');
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const closeModal = document.getElementById('closeModal');
+
+  // Añadir evento de clic a cada imagen para abrir el modal
+  productImages.forEach(img => {
+      img.addEventListener('click', (event) => {
+          modal.classList.remove('hidden');
+          modalImage.src = event.target.src;
+          setTimeout(() => modalImage.classList.remove('scale-90'), 10); // Zoom suave de entrada
+      });
+  });
+
+  // Cerrar el modal al hacer clic en el botón cerrar
+  closeModal.addEventListener('click', () => {
+      modalImage.classList.add('scale-90'); // Zoom suave de salida
+      setTimeout(() => modal.classList.add('hidden'), 200);
+  });
+
+  // Cerrar el modal al hacer clic en cualquier parte del mismo
+  modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+          modalImage.classList.add('scale-90'); // Zoom suave de salida
+          setTimeout(() => modal.classList.add('hidden'), 200);
+      }
+  });
 });

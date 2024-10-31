@@ -1,0 +1,81 @@
+.bg-gray-50 {
+    background-color: #f9fafb; /* Fondo gris claro */
+}
+
+.text-gray-700 {
+    color: #4a4a4a; /* Gris oscuro para texto */
+}
+
+.hover\:text-blue-800:hover {
+    color: #1f4e79; /* Azul sobrio para hover */
+}
+
+.bg-blue-600 {
+    background-color: #2563eb; /* Fondo azul oscuro al hacer clic */
+}
+
+.text-white {
+    color: #ffffff; /* Color blanco para texto activo */
+}
+
+.bg-gray-50 {
+    background-color: #f9fafb; /* Fondo gris claro */
+}
+
+.text-gray-700 {
+    color: #4a4a4a; /* Gris oscuro para texto */
+}
+
+.hover\:text-blue-800:hover {
+    color: #1f4e79; /* Azul sobrio para hover */
+}
+
+.bg-cyan-600 {
+    background-color: #0891b2; /* Fondo cian oscuro al hacer clic */
+}
+
+.text-lg {
+    font-size: 1.125rem; /* Tamaño de texto grande */
+}
+
+.font-semibold {
+    font-weight: 600; /* Peso de fuente seminegrita */
+}
+
+.rounded-full {
+    border-radius: 9999px; /* Borde redondeado completo */
+}
+
+#imageModal img {
+    transition: transform 0.3s ease;
+}
+
+
+.container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+.social-icon {
+    width: 24px;
+    height: 24px;
+}

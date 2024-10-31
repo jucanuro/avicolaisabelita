@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     const templateHome = `
-       <section class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center text-white">
+       <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center text-white">
         
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-80">

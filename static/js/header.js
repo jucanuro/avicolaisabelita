@@ -1,20 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { 
     const templateHeader = `
-        <header class="bg-white shadow-md fixed w-full top-0 z-10">
+        <header class="bg-gray-100 shadow-md fixed w-full top-0 z-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center py-4">
+                <div class="flex justify-between items-center py-2">
                     
-                    <div class="text-2xl font-bold text-gray-800">
+                    <div class="text-xs font-bold text-gray-700">
                         <img class="w-auto h-auto opacity-100 shadow-none col-span-2 lg:max-h-12 max-h-9 w-full object-contain lg:col-span-1 shadow-2" src="static/img/logo/Logo-AI1.png" alt="Reform" width="158" height="48">
+                        <span class="text-center text-cyan-800 font-semibold">Avícola Isabelita</span>
+
                     </div>
                     
                     <nav class="hidden md:flex space-x-8">
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Inicio</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Producto</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Contacto</a>
+                        <a href="#home" class="nav-link text-gray-700 text-md font-semibold hover:text-blue-800">Inicio</a>
+                        <a href="#producto" class="nav-link text-gray-700 text-md font-semibold hover:text-blue-800">Producto</a>
+                        <a href="#contact" class="nav-link text-gray-700 text-md font-semibold hover:text-blue-800">Contacto</a>
                     </nav>
 
-                    <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+                    <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -22,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
 
                 <div id="mobile-menu" class="hidden md:hidden flex-col space-y-4 py-4">
-                    <a href="#" class="block text-gray-600 hover:text-gray-900">Inicio</a>
-                    <a href="#" class="block text-gray-600 hover:text-gray-900">Producto</a>
-                    <a href="#" class="block text-gray-600 hover:text-gray-900">Contacto</a>
+                    <a href="#home" class="nav-link block text-gray-700 text-sm font-semibold hover:text-blue-800">Inicio</a>
+                    <a href="#producto" class="nav-link block text-gray-700 text-sm font-semibold hover:text-blue-800">Producto</a>
+                    <a href="#contact" class="nav-link block text-gray-700 text-sm font-semibold hover:text-blue-800">Contacto</a>
                 </div>
             </div>
         </header>
@@ -42,13 +44,17 @@ document.addEventListener("DOMContentLoaded", function() {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Seleccionar todos los enlaces del menú móvil
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    // Seleccionar todos los enlaces
+    const links = document.querySelectorAll('.nav-link');
 
-    // Añadir evento click a cada enlace para ocultar el menú móvil
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+    // Añadir evento click a cada enlace para aplicar fondo cian y estilo de tab redondeado
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Remover el fondo y estilo de tab redondeado de cualquier enlace activo
+            links.forEach(l => l.classList.remove('bg-cyan-600', 'text-white', 'rounded-full', 'py-2', 'px-4'));
+
+            // Añadir fondo cian y estilo de tab redondeado al enlace clicado
+            event.target.classList.add('bg-cyan-600', 'text-white', 'rounded-full', 'py-2', 'px-4');
         });
     });
 });
