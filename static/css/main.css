@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    padding-top: 4rem; /* Espacio para el header fijo */
+}
 .bg-gray-50 {
     background-color: #f9fafb; /* Fondo gris claro */
 }

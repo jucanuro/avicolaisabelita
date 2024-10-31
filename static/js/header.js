@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center py-2">
                     
-                    <div class="text-xs font-bold text-gray-700">
-                        <img class="w-auto h-auto opacity-100 shadow-none col-span-2 lg:max-h-12 max-h-9 w-full object-contain lg:col-span-1 shadow-2" src="static/img/logo/Logo-AI1.png" alt="Reform" width="158" height="48">
+                    <div class="text-xs font-bold text-gray-700 flex items-center space-x-2">
+                        <img class="w-auto h-auto opacity-100 shadow-none lg:max-h-12 max-h-9 w-full object-contain" src="static/img/logo/Logo-AI1.png" alt="Reform" width="158" height="48">
                         <span class="text-center text-cyan-800 font-semibold">Avícola Isabelita</span>
-
                     </div>
                     
                     <nav class="hidden md:flex space-x-8">
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </header>
     `;
-    
+
     // Insertar el template en el DOM
     document.getElementById("header-content").innerHTML = templateHeader;
 
